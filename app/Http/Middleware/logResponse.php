@@ -5,7 +5,6 @@ namespace App\Http\Middleware;
 use Closure;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
-// use Illuminate\Support\Facades\Log;
 
 class logResponse
 {
@@ -17,7 +16,8 @@ class logResponse
     public function handle(Request $request, Closure $next): Response
     {
         $response = $next($request);
-        logger()->info('Response status code: ' . $response->status());
+        $infoLog = 'Method: ' . $request->method() . ', Response status code: ' . $response->status() . ', URL called: ' . $request->fullUrl();
+        logger()->info($infoLog);
         return $response;
     }
 }
