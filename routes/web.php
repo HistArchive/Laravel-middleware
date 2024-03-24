@@ -21,8 +21,6 @@ Route::group(['middleware' => ['mantenimiento']], function() {
     Route::resource('/productos', ProductControl::class);
     
     Route::resource('/productos', ProductControl::class);
-    Route::get('/productos/create', [ProductControl::class, 'create']);
-    Route::resource('/productos', ProductControl::class);
     Route::post('/productos', [ProductControl::class, 'store']);
     Route::get('/productos/{id}', [ProductControl::class, 'show']);
     Route::put('/productos/{id}', [ProductControl::class, 'update']);

@@ -19,10 +19,6 @@ class ProductControl extends Controller
             'categories' => Category::all()
         ]);        
     }
-  /*  public static function create(){
-        $categorias=category::all();
-        return view('Product.template',['category'=>$categorias]);
-    }*/
     public static function store(Request $request){
         $rules = [
             'NombreAg' => 'required|string|max:255',
