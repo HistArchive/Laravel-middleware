@@ -17,7 +17,9 @@ return new class extends Migration
             $table->longText('description');
             $table->longText('descriptionlong');
             $table->float('price');
-            $table->timestamps();
+            $table->boolean('Estado')->default(true);
+            $table->timestamp('created_at')->useCurrent();
+            $table->timestamp('updated_at')->useCurrent();
         });
     }
 

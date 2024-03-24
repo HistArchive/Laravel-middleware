@@ -5,7 +5,7 @@ namespace App\Http\Middleware;
 use Closure;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
-use Illuminate\Support\Facades\Log;
+// use Illuminate\Support\Facades\Log;
 
 class logResponse
 {
@@ -16,10 +16,8 @@ class logResponse
      */
     public function handle(Request $request, Closure $next): Response
     {
-        dd('Middleware executed');
-        var_dump($response->getContent());
         $response = $next($request);
-        info('Response: ' . $response->getContent()); // Usa info() para registrar el mensaje
+        logger()->info('Response status code: ' . $response->status());
         return $response;
     }
 }

@@ -65,11 +65,13 @@ class Kernel extends HttpKernel
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
     ];
+
+    // Se agrega el middleware logResponse en la prioridad, para que se ejecute antes que los demás
+    protected $middlewarePriority = [
+        \App\Http\Middleware\logResponse::class,
+    ];
+    
     protected $routeMiddleware = [
         'mantenimiento' => \App\Http\Middleware\mantenimiento::class
-    ];
-
-    protected $MiddleLog = [
-       'log'=> \App\Http\Middleware\logResponse::class
     ];
 }
