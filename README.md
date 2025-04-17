@@ -35,7 +35,7 @@ This is a Laravel application with a focus on middleware functionality. The proj
 1. Clone the repository:
 
     ```bash
-    git clone <repository-url>
+    git clone https://github.com/HistArchive/Laravel-middleware
     cd Laravel-middleware
     ```
 
